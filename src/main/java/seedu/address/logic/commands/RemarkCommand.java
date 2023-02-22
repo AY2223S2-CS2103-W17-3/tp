@@ -34,6 +34,11 @@ public class RemarkCommand extends Command {
     private final Index index;
     private final Remark remark;
 
+    /**
+     * Creates an RemarkCommand to update with the specified {@code remark}
+     * @param index of the person of the remark to update
+     * @param remark New remark to update with
+     */
     public RemarkCommand(Index index, Remark remark) {
         this.index = index;
         this.remark = remark;
