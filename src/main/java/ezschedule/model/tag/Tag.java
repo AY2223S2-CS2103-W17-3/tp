@@ -1,7 +1,7 @@
-package seedu.address.model.tag;
+package ezschedule.model.tag;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
+import static ezschedule.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a Tag in the address book.

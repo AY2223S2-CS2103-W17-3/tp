@@ -1,4 +1,4 @@
-package seedu.address;
+package ezschedule;
 
 import javafx.application.Application;
 

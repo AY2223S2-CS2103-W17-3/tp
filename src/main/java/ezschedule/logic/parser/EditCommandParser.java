@@ -1,23 +1,23 @@
-package seedu.address.logic.parser;
+package ezschedule.logic.parser;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static ezschedule.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static ezschedule.logic.parser.CliSyntax.PREFIX_ADDRESS;
+import static ezschedule.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static ezschedule.logic.parser.CliSyntax.PREFIX_NAME;
+import static ezschedule.logic.parser.CliSyntax.PREFIX_PHONE;
+import static ezschedule.logic.parser.CliSyntax.PREFIX_TAG;
 
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Optional;
 import java.util.Set;
 
-import seedu.address.commons.core.index.Index;
-import seedu.address.logic.commands.EditCommand;
-import seedu.address.logic.commands.EditCommand.EditPersonDescriptor;
-import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.tag.Tag;
+import ezschedule.commons.core.index.Index;
+import ezschedule.logic.commands.EditCommand;
+import ezschedule.logic.commands.EditCommand.EditPersonDescriptor;
+import ezschedule.logic.parser.exceptions.ParseException;
+import ezschedule.model.tag.Tag;
 
 /**
  * Parses input arguments and creates a new EditCommand object

@@ -1,4 +1,4 @@
-package seedu.address.commons.core;
+package ezschedule.commons.core;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

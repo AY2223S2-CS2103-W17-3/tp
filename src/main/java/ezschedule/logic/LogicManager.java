@@ -1,21 +1,21 @@
-package seedu.address.logic;
+package ezschedule.logic;
 
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.logging.Logger;
 
 import javafx.collections.ObservableList;
-import seedu.address.commons.core.GuiSettings;
-import seedu.address.commons.core.LogsCenter;
-import seedu.address.logic.commands.Command;
-import seedu.address.logic.commands.CommandResult;
-import seedu.address.logic.commands.exceptions.CommandException;
-import seedu.address.logic.parser.AddressBookParser;
-import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.Model;
-import seedu.address.model.ReadOnlyAddressBook;
-import seedu.address.model.person.Person;
-import seedu.address.storage.Storage;
+import ezschedule.commons.core.GuiSettings;
+import ezschedule.commons.core.LogsCenter;
+import ezschedule.logic.commands.Command;
+import ezschedule.logic.commands.CommandResult;
+import ezschedule.logic.commands.exceptions.CommandException;
+import ezschedule.logic.parser.AddressBookParser;
+import ezschedule.logic.parser.exceptions.ParseException;
+import ezschedule.model.Model;
+import ezschedule.model.ReadOnlyAddressBook;
+import ezschedule.model.person.Person;
+import ezschedule.storage.Storage;
 
 /**
  * The main LogicManager of the app.

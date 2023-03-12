@@ -1,14 +1,14 @@
-package seedu.address.logic;
+package ezschedule.logic;
 
 import java.nio.file.Path;
 
 import javafx.collections.ObservableList;
-import seedu.address.commons.core.GuiSettings;
-import seedu.address.logic.commands.CommandResult;
-import seedu.address.logic.commands.exceptions.CommandException;
-import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.ReadOnlyAddressBook;
-import seedu.address.model.person.Person;
+import ezschedule.commons.core.GuiSettings;
+import ezschedule.logic.commands.CommandResult;
+import ezschedule.logic.commands.exceptions.CommandException;
+import ezschedule.logic.parser.exceptions.ParseException;
+import ezschedule.model.ReadOnlyAddressBook;
+import ezschedule.model.person.Person;
 
 /**
  * API of the Logic component
@@ -26,7 +26,7 @@ public interface Logic {
     /**
      * Returns the AddressBook.
      *
-     * @see seedu.address.model.Model#getAddressBook()
+     * @see ezschedule.model.Model#getAddressBook()
      */
     ReadOnlyAddressBook getAddressBook();
 

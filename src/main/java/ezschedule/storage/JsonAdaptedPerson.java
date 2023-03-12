@@ -1,4 +1,4 @@
-package seedu.address.storage;
+package ezschedule.storage;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -9,13 +9,13 @@ import java.util.stream.Collectors;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.model.person.Address;
-import seedu.address.model.person.Email;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Person;
-import seedu.address.model.person.Phone;
-import seedu.address.model.tag.Tag;
+import ezschedule.commons.exceptions.IllegalValueException;
+import ezschedule.model.person.Address;
+import ezschedule.model.person.Email;
+import ezschedule.model.person.Name;
+import ezschedule.model.person.Person;
+import ezschedule.model.person.Phone;
+import ezschedule.model.tag.Tag;
 
 /**
  * Jackson-friendly version of {@link Person}.

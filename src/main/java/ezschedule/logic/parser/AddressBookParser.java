@@ -1,21 +1,21 @@
-package seedu.address.logic.parser;
+package ezschedule.logic.parser;
 
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
+import static ezschedule.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static ezschedule.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import seedu.address.logic.commands.AddCommand;
-import seedu.address.logic.commands.ClearCommand;
-import seedu.address.logic.commands.Command;
-import seedu.address.logic.commands.DeleteCommand;
-import seedu.address.logic.commands.EditCommand;
-import seedu.address.logic.commands.ExitCommand;
-import seedu.address.logic.commands.FindCommand;
-import seedu.address.logic.commands.HelpCommand;
-import seedu.address.logic.commands.ListCommand;
-import seedu.address.logic.parser.exceptions.ParseException;
+import ezschedule.logic.commands.AddCommand;
+import ezschedule.logic.commands.ClearCommand;
+import ezschedule.logic.commands.Command;
+import ezschedule.logic.commands.DeleteCommand;
+import ezschedule.logic.commands.EditCommand;
+import ezschedule.logic.commands.ExitCommand;
+import ezschedule.logic.commands.FindCommand;
+import ezschedule.logic.commands.HelpCommand;
+import ezschedule.logic.commands.ListCommand;
+import ezschedule.logic.parser.exceptions.ParseException;
 
 /**
  * Parses user input.

@@ -1,9 +1,9 @@
-package seedu.address.logic.commands;
+package ezschedule.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 
-import seedu.address.model.AddressBook;
-import seedu.address.model.Model;
+import ezschedule.model.AddressBook;
+import ezschedule.model.Model;
 
 /**
  * Clears the address book.

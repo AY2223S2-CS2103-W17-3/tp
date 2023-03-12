@@ -1,7 +1,7 @@
-package seedu.address.commons.util;
+package ezschedule.commons.util;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
+import static ezschedule.commons.util.AppUtil.checkArgument;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

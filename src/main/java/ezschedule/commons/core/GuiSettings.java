@@ -1,4 +1,4 @@
-package seedu.address.commons.core;
+package ezschedule.commons.core;
 
 import java.awt.Point;
 import java.io.Serializable;

@@ -1,4 +1,4 @@
-package seedu.address.logic.commands;
+package ezschedule.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 

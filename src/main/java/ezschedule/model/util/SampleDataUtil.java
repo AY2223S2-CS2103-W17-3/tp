@@ -1,17 +1,17 @@
-package seedu.address.model.util;
+package ezschedule.model.util;
 
 import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import seedu.address.model.AddressBook;
-import seedu.address.model.ReadOnlyAddressBook;
-import seedu.address.model.person.Address;
-import seedu.address.model.person.Email;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Person;
-import seedu.address.model.person.Phone;
-import seedu.address.model.tag.Tag;
+import ezschedule.model.AddressBook;
+import ezschedule.model.ReadOnlyAddressBook;
+import ezschedule.model.person.Address;
+import ezschedule.model.person.Email;
+import ezschedule.model.person.Name;
+import ezschedule.model.person.Person;
+import ezschedule.model.person.Phone;
+import ezschedule.model.tag.Tag;
 
 /**
  * Contains utility methods for populating {@code AddressBook} with sample data.

@@ -1,4 +1,4 @@
-package seedu.address.logic.parser;
+package ezschedule.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 
@@ -6,14 +6,14 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-import seedu.address.commons.core.index.Index;
-import seedu.address.commons.util.StringUtil;
-import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.person.Address;
-import seedu.address.model.person.Email;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Phone;
-import seedu.address.model.tag.Tag;
+import ezschedule.commons.core.index.Index;
+import ezschedule.commons.util.StringUtil;
+import ezschedule.logic.parser.exceptions.ParseException;
+import ezschedule.model.person.Address;
+import ezschedule.model.person.Email;
+import ezschedule.model.person.Name;
+import ezschedule.model.person.Phone;
+import ezschedule.model.tag.Tag;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes.

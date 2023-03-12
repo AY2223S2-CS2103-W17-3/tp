@@ -1,6 +1,6 @@
-package seedu.address.logic.commands;
+package ezschedule.logic.commands;
 
-import seedu.address.model.Model;
+import ezschedule.model.Model;
 
 /**
  * Terminates the program.

@@ -1,6 +1,6 @@
-package seedu.address.logic.commands;
+package ezschedule.logic.commands;
 
-import seedu.address.model.Model;
+import ezschedule.model.Model;
 
 /**
  * Format full help instructions for every command for display.

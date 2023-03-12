@@ -1,4 +1,4 @@
-package seedu.address.commons.core;
+package ezschedule.commons.core;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

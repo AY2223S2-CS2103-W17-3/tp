@@ -1,4 +1,4 @@
-package seedu.address.commons.core.index;
+package ezschedule.commons.core.index;
 
 /**
  * Represents a zero-based or one-based index.

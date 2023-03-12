@@ -1,4 +1,4 @@
-package seedu.address.ui;
+package ezschedule.ui;
 
 import java.util.logging.Logger;
 
@@ -10,12 +10,12 @@ import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import seedu.address.commons.core.GuiSettings;
-import seedu.address.commons.core.LogsCenter;
-import seedu.address.logic.Logic;
-import seedu.address.logic.commands.CommandResult;
-import seedu.address.logic.commands.exceptions.CommandException;
-import seedu.address.logic.parser.exceptions.ParseException;
+import ezschedule.commons.core.GuiSettings;
+import ezschedule.commons.core.LogsCenter;
+import ezschedule.logic.Logic;
+import ezschedule.logic.commands.CommandResult;
+import ezschedule.logic.commands.exceptions.CommandException;
+import ezschedule.logic.parser.exceptions.ParseException;
 
 /**
  * The Main Window. Provides the basic application layout containing
@@ -170,7 +170,7 @@ public class MainWindow extends UiPart<Stage> {
     /**
      * Executes the command and returns the result.
      *
-     * @see seedu.address.logic.Logic#execute(String)
+     * @see ezschedule.logic.Logic#execute(String)
      */
     private CommandResult executeCommand(String commandText) throws CommandException, ParseException {
         try {

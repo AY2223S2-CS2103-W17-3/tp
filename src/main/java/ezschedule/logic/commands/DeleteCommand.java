@@ -1,14 +1,14 @@
-package seedu.address.logic.commands;
+package ezschedule.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 
 import java.util.List;
 
-import seedu.address.commons.core.Messages;
-import seedu.address.commons.core.index.Index;
-import seedu.address.logic.commands.exceptions.CommandException;
-import seedu.address.model.Model;
-import seedu.address.model.person.Person;
+import ezschedule.commons.core.Messages;
+import ezschedule.commons.core.index.Index;
+import ezschedule.logic.commands.exceptions.CommandException;
+import ezschedule.model.Model;
+import ezschedule.model.person.Person;
 
 /**
  * Deletes a person identified using it's displayed index from the address book.

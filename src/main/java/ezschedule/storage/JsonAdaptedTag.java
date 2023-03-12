@@ -1,10 +1,10 @@
-package seedu.address.storage;
+package ezschedule.storage;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.model.tag.Tag;
+import ezschedule.commons.exceptions.IllegalValueException;
+import ezschedule.model.tag.Tag;
 
 /**
  * Jackson-friendly version of {@link Tag}.

@@ -1,4 +1,4 @@
-package seedu.address.ui;
+package ezschedule.ui;
 
 import javafx.stage.Stage;
 

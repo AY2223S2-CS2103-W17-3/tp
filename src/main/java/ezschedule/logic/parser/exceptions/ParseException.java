@@ -1,6 +1,6 @@
-package seedu.address.logic.parser.exceptions;
+package ezschedule.logic.parser.exceptions;
 
-import seedu.address.commons.exceptions.IllegalValueException;
+import ezschedule.commons.exceptions.IllegalValueException;
 
 /**
  * Represents a parse error encountered by a parser.

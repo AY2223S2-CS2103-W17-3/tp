@@ -1,4 +1,4 @@
-package seedu.address.commons.exceptions;
+package ezschedule.commons.exceptions;
 
 /**
  * Signals that some given data does not fulfill some constraints.

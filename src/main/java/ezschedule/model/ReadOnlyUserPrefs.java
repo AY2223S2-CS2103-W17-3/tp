@@ -1,8 +1,8 @@
-package seedu.address.model;
+package ezschedule.model;
 
 import java.nio.file.Path;
 
-import seedu.address.commons.core.GuiSettings;
+import ezschedule.commons.core.GuiSettings;
 
 /**
  * Unmodifiable view of user prefs.
