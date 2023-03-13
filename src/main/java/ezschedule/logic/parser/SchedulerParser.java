@@ -13,7 +13,7 @@ import ezschedule.logic.parser.exceptions.ParseException;
 /**
  * Parses user input.
  */
-public class EzScheduleParser {
+public class SchedulerParser {
 
     /**
      * Used for initial separation of command word and args.

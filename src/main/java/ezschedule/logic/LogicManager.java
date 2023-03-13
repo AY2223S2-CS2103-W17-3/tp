@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import ezschedule.commons.core.LogsCenter;
 import ezschedule.logic.commands.Command;
 import ezschedule.logic.commands.CommandResult;
-import ezschedule.logic.parser.EzScheduleParser;
+import ezschedule.logic.parser.SchedulerParser;
 import ezschedule.logic.parser.exceptions.ParseException;
 
 /**
@@ -15,14 +15,14 @@ public class LogicManager implements Logic {
 
     private final Logger logger = LogsCenter.getLogger(ezschedule.logic.LogicManager.class);
 
-    private final EzScheduleParser ezScheduleParser;
+    private final SchedulerParser ezScheduleParser;
 
     /**
      * Constructs a {@code LogicManager}.
      */
     public LogicManager() {
 
-        ezScheduleParser = new EzScheduleParser();
+        ezScheduleParser = new SchedulerParser();
     }
 
     @Override
