@@ -10,8 +10,6 @@ public class Event extends Slot {
     private String description;
     private String location; // optional
 
-
-
     /**
      * Constructs an instance of Event.
      */
@@ -19,6 +17,4 @@ public class Event extends Slot {
         super(date, startTime, endTime);
         this.description = description;
     }
-
-
 }

@@ -1,4 +1,4 @@
-package seedu.address.logic.commands;
+package ezschedule.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 
@@ -53,14 +53,14 @@ public class CommandResult {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof CommandResult)) {
+        if (!(other instanceof seedu.address.logic.commands.CommandResult)) {
             return false;
         }
 
         CommandResult otherCommandResult = (CommandResult) other;
         return feedbackToUser.equals(otherCommandResult.feedbackToUser)
-                && showHelp == otherCommandResult.showHelp
-                && exit == otherCommandResult.exit;
+            && showHelp == otherCommandResult.showHelp
+            && exit == otherCommandResult.exit;
     }
 
     @Override

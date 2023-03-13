@@ -12,6 +12,11 @@ import ezschedule.commons.core.Version;
 import ezschedule.commons.exceptions.DataConversionException;
 import ezschedule.commons.util.ConfigUtil;
 import ezschedule.commons.util.StringUtil;
+import ezschedule.logic.Logic;
+import ezschedule.logic.LogicManager;
+import ezschedule.logic.commands.CommandResult;
+import ezschedule.logic.parser.Parser;
+import ezschedule.logic.parser.exceptions.ParseException;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -28,6 +33,8 @@ public class MainApp extends Application {
     // TODO: also declare Ui, Logic, Storage, etc
     protected Config config;
 
+    protected Logic logic;
+
     @Override
     public void init() throws Exception {
         logger.info("=============================[ Initializing ]===========================");
@@ -37,6 +44,7 @@ public class MainApp extends Application {
         config = initConfig(appParameters.getConfigPath());
 
         // TODO: initialise Ui, Logic, Storage, etc
+        logic = new LogicManager();
 
     }
 
@@ -67,7 +75,7 @@ public class MainApp extends Application {
             initializedConfig = configOptional.orElse(new Config());
         } catch (DataConversionException e) {
             logger.warning("Config file at " + configFilePathUsed + " is not in the correct format. "
-                    + "Using default config properties");
+                + "Using default config properties");
             initializedConfig = new Config();
         }
 
@@ -81,18 +89,22 @@ public class MainApp extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws ParseException {
         logger.info("Starting Ez-Schedule " + MainApp.VERSION);
 
         // TODO: Start to run UI of app
-        //ui.start(primaryStage);
+        // ui.start(primaryStage);
 
         // TODO: Temporary code to allow exiting
         String input;
         Scanner sc = new Scanner(System.in);
         do {
             input = sc.nextLine();
-            System.out.println("To be implemented. Type 'exit' to stop. You typed: " + input);
+
+            // TODO: Found in MainWindow.java executeCommand method
+            CommandResult cr = logic.execute(input);
+            logger.info("Result: " + cr.getFeedbackToUser());
+            // System.out.println("To be implemented. Type 'exit' to stop. You typed: " + input);
         } while (input.compareTo("exit") != 0);
         Platform.exit();
     }

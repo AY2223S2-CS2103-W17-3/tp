@@ -5,16 +5,15 @@ package ezschedule.slots;
  */
 public abstract class Slot {
 
-    private String date;
-    private String startTime;
-    private String endTime;
+    private final String date;
+    private final String startTime;
+    private final String endTime;
 
     Slot(String date, String startTime, String endTime) {
         this.date = date;
         this.startTime = startTime;
         this.endTime = endTime;
     }
-
 
     public String getDate() {
         return date;
@@ -27,5 +26,4 @@ public abstract class Slot {
     public String getEndTime() {
         return endTime;
     }
-
 }
