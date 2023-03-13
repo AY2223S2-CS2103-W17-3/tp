@@ -3,6 +3,9 @@ package ezschedule.logic.parser;
 import ezschedule.logic.commands.Command;
 import ezschedule.logic.parser.exceptions.ParseException;
 
+/**
+ * Represents a Parser that is able to parse user input into a {@code Command} of type {@code T}.
+ */
 public interface Parser<T extends Command> {
 
     /**

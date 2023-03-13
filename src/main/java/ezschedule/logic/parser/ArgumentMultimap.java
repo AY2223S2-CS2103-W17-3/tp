@@ -6,8 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import seedu.address.logic.parser.Prefix;
-
 /**
  * Stores mapping of prefixes to their respective arguments.
  * Each key may be associated with multiple argument values.
@@ -18,7 +16,7 @@ import seedu.address.logic.parser.Prefix;
 public class ArgumentMultimap {
 
     /** Prefixes mapped to their respective arguments**/
-    private final Map<seedu.address.logic.parser.Prefix, List<String>> argMultimap = new HashMap<>();
+    private final Map<Prefix, List<String>> argMultimap = new HashMap<>();
 
     /**
      * Associates the specified argument value with {@code prefix} key in this map.
@@ -27,7 +25,7 @@ public class ArgumentMultimap {
      * @param prefix   Prefix key with which the specified argument value is to be associated
      * @param argValue Argument value to be associated with the specified prefix key
      */
-    public void put(seedu.address.logic.parser.Prefix prefix, String argValue) {
+    public void put(Prefix prefix, String argValue) {
         List<String> argValues = getAllValues(prefix);
         argValues.add(argValue);
         argMultimap.put(prefix, argValues);
@@ -36,7 +34,7 @@ public class ArgumentMultimap {
     /**
      * Returns the last value of {@code prefix}.
      */
-    public Optional<String> getValue(seedu.address.logic.parser.Prefix prefix) {
+    public Optional<String> getValue(Prefix prefix) {
         List<String> values = getAllValues(prefix);
         return values.isEmpty() ? Optional.empty() : Optional.of(values.get(values.size() - 1));
     }
@@ -46,7 +44,7 @@ public class ArgumentMultimap {
      * If the prefix does not exist or has no values, this will return an empty list.
      * Modifying the returned list will not affect the underlying data structure of the ArgumentMultimap.
      */
-    public List<String> getAllValues(seedu.address.logic.parser.Prefix prefix) {
+    public List<String> getAllValues(Prefix prefix) {
         if (!argMultimap.containsKey(prefix)) {
             return new ArrayList<>();
         }

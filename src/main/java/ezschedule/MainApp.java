@@ -15,7 +15,6 @@ import ezschedule.commons.util.StringUtil;
 import ezschedule.logic.Logic;
 import ezschedule.logic.LogicManager;
 import ezschedule.logic.commands.CommandResult;
-import ezschedule.logic.parser.Parser;
 import ezschedule.logic.parser.exceptions.ParseException;
 import javafx.application.Application;
 import javafx.application.Platform;

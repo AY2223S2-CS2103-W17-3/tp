@@ -1,12 +1,16 @@
 package ezschedule.logic.commands;
 
-import ezschedule.slots.Event;
 import static ezschedule.logic.parser.CliSyntax.PREFIX_DATE;
 import static ezschedule.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static ezschedule.logic.parser.CliSyntax.PREFIX_END_TIME;
 import static ezschedule.logic.parser.CliSyntax.PREFIX_START_TIME;
 import static java.util.Objects.requireNonNull;
 
+import ezschedule.slots.Event;
+
+/**
+ * Adds an event to the scheduler.
+ */
 public class AddCommand extends Command {
 
     public static final String COMMAND_WORD = "add";
