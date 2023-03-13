@@ -46,10 +46,10 @@ public class AddCommandParser implements Parser<AddCommand> {
         String endTime = argMultimap.getValue(PREFIX_END_TIME).get();
 
         Event event = new Event(description, date, startTime, endTime);
-        System.out.println("Event = descr: " + description +
-            " date:" + date +
-            " startTime:" + startTime +
-            " endTime:" + endTime + "\n");
+        System.out.println("Event = descr: " + description
+            + " date:" + date
+            + " startTime:" + startTime
+            + " endTime:" + endTime + "\n");
         return new AddCommand(event);
     }
 }
