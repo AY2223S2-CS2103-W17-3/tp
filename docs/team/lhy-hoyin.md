@@ -39,8 +39,8 @@ to be added soon
 |-----------|--------------------------|
 | v1.1      | [4] [pr-reviewed-v1.1]   |
 | v1.2      | [ ] [pr-reviewed-v1.2]   |
-| v1.3      | [ ] [pr-reviewed-v1.3]   |                                                                               
-| v1.4      | [ ] [pr-reviewed-v1.4]   |                                                                             
+| v1.3      | [ ] [pr-reviewed-v1.3]   |
+| v1.4      | [ ] [pr-reviewed-v1.4]   |
 | Total:    | [4] [pr-reviewed-total]  |
 
 PR Highlights
