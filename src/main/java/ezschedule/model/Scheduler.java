@@ -85,6 +85,13 @@ public class Scheduler implements ReadOnlyScheduler {
     }
 
     /**
+     * Sorts all events in the scheduler in chronological order.
+     */
+    public void sortEvent() {
+        events.sortByChronologicalOrder();
+    }
+
+    /**
      * Removes {@code key} from this {@code Scheduler}.
      * {@code key} must exist in the scheduler
      */

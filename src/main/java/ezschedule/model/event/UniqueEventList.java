@@ -98,6 +98,13 @@ public class UniqueEventList implements Iterable<Event> {
     }
 
     /**
+     * Sorts all events in chronological order.
+     */
+    public void sortByChronologicalOrder() {
+        FXCollections.sort(internalList);
+    }
+
+    /**
      * Returns the backing list as an unmodifiable {@code ObservableList}.
      */
     public ObservableList<Event> asUnmodifiableObservableList() {

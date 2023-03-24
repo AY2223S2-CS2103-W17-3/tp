@@ -81,6 +81,11 @@ public interface Model {
     void setEvent(Event target, Event editedEvent);
 
     /**
+     * Sorts all the events in the event list in chronological order.
+     */
+    void sortEvents();
+
+    /**
      * Returns an unmodifiable view of the filtered event list
      */
     ObservableList<Event> getFilteredEventList();

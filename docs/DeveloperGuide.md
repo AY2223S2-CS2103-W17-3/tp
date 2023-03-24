@@ -167,6 +167,44 @@ Classes used by multiple components are in the `ezschedule.commons` package.
 
 This section describes some noteworthy details on how certain features are implemented.
 
+### Sort events feature
+
+Sort all events in the scheduler in chronological order by entering `sort` as a command.
+A chronological order can help user to prioritise and focus on the more urgent events.
+
+#### How it is currently implemented
+
+A `SortCommand` was added to allow user to initiate the sorting of events.
+The sorting is handled by `FXCollections#sort()`.
+The method calls by `SortCommand` is similar to the other `XXXCommand`.
+
+#### Proposed enhancement
+
+Remove `SortCommand`. Instead, automatically sort the events whenever an event is changed
+(for example: added, deleted, edited).
+
+##### Pros over existing implementation
+
+- Provide convenience for user
+- Allow smoother implementation for showing the next arbitrary number of upcoming events
+
+##### Cons over existing implementation
+
+- Repeated sorting of events whenever events are changed might introduce lag,
+  especially if there is a large number of events
+    - Possible to resolve via threads
+- Implementation may be complicated if completed/old events are still in the schedule
+
+After reviewing the following pros and cons, we have decided that the pros outweighs the cons,
+and shall implement the enhancement in the future.
+
+#### Alternatives Considered
+
+Implement our own insertion sort to use when adding events.\
+This ensures the chronological order of the events is always correct when adding.
+However, other ways of managing the chronological order is required in case of an event being edited.
+
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
@@ -281,10 +319,10 @@ The feature is going to be implemented by
 #### Additional Feature
 1. onDoubleClick() of a calender date (boxes) - Shows a popup GUI of user schedule, similar to that of a timetable for either that day or week
 
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Documentation, logging, testing, configuration, dev-ops**
-
 * [Documentation guide](Documentation.md)
 * [Testing guide](Testing.md)
 * [Logging guide](Logging.md)
@@ -464,9 +502,13 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   1. Double-click the jar file Expected: Shows the GUI with 3 components (The window size may not be
+      optimum):
+      1. A calendar of the month of present time 
+      2. An input bar for user commands
+      3. A container showing the next upcoming event.
 
-1. Saving window preferences
+2. Saving window preferences
 
    1. Resize the window to an optimum size. Move the window to a different location. Close the window.
 
@@ -477,12 +519,13 @@ testers are expected to do more *exploratory* testing.
 
 ### Deleting a event
 
-1. Deleting a event while all persons are being shown
+1. Deleting a event while all events are shown
 
-   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+   1. Prerequisites: List all events using the `list` command. Multiple events in the list.
 
    1. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+      Expected: First event is deleted from the list. Details of the deleted event shown in the status message. 
+      Timestamp in the status bar is updated.
 
    1. Test case: `delete 0`<br>
       Expected: No event is deleted. Error details shown in the status message. Status bar remains the same.

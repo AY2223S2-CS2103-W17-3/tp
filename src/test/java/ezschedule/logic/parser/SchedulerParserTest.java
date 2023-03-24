@@ -22,6 +22,7 @@ import ezschedule.logic.commands.ExitCommand;
 import ezschedule.logic.commands.FindCommand;
 import ezschedule.logic.commands.HelpCommand;
 import ezschedule.logic.commands.ListCommand;
+import ezschedule.logic.commands.SortCommand;
 import ezschedule.logic.parser.exceptions.ParseException;
 import ezschedule.model.event.Event;
 import ezschedule.model.event.EventContainsKeywordsPredicate;
@@ -51,6 +52,11 @@ public class SchedulerParserTest {
         DeleteCommand command = (DeleteCommand) parser.parseCommand(
                 DeleteCommand.COMMAND_WORD + " " + INDEX_FIRST_EVENT.getOneBased());
         assertEquals(new DeleteCommand(INDEX_FIRST_EVENT), command);
+    }
+
+    @Test
+    public void parseCommand_sort() throws Exception {
+        assertTrue(parser.parseCommand(SortCommand.COMMAND_WORD) instanceof SortCommand);
     }
 
     @Test
