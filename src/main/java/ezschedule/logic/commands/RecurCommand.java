@@ -91,15 +91,15 @@ public class RecurCommand extends Command {
         int daysDiff = (int) baseDate.getDaysBetween(endDate.date);
         Date newDate = new Date(eventToRecur.getDate().date.plusDays(1).toString());
         Event nextEventToRecur =
-                new Event(eventToRecur.getName(), newDate
-                        , eventToRecur.getStartTime(), eventToRecur.getEndTime());
+                new Event(eventToRecur.getName(), newDate,
+                        eventToRecur.getStartTime(), eventToRecur.getEndTime());
 
         for (int i = 0; i < daysDiff; i++) {
             model.addEvent(nextEventToRecur);
             newDate = new Date(nextEventToRecur.getDate().date.plusDays(1).toString());
             nextEventToRecur =
-                    new Event(eventToRecur.getName(), newDate
-                            , eventToRecur.getStartTime(), eventToRecur.getEndTime());
+                    new Event(eventToRecur.getName(), newDate,
+                            eventToRecur.getStartTime(), eventToRecur.getEndTime());
         }
     }
 
@@ -113,15 +113,15 @@ public class RecurCommand extends Command {
         int monthsDiff = (int) baseDate.getMonthsBetween(endDate.date);
         Date newDate = new Date(eventToRecur.getDate().date.plusMonths(1).toString());
         Event nextEventToRecur =
-                new Event(eventToRecur.getName(), newDate
-                        , eventToRecur.getStartTime(), eventToRecur.getEndTime());
+                new Event(eventToRecur.getName(), newDate,
+                        eventToRecur.getStartTime(), eventToRecur.getEndTime());
 
         for (int i = 0; i < monthsDiff; i++) {
             model.addEvent(nextEventToRecur);
             newDate = new Date(nextEventToRecur.getDate().date.plusMonths(1).toString());
             nextEventToRecur =
-                    new Event(eventToRecur.getName(), newDate
-                            , eventToRecur.getStartTime(), eventToRecur.getEndTime());
+                    new Event(eventToRecur.getName(), newDate,
+                            eventToRecur.getStartTime(), eventToRecur.getEndTime());
         }
     }
 
@@ -135,15 +135,15 @@ public class RecurCommand extends Command {
         int yearsDiff = (int) baseDate.getYearsBetween(endDate.date);
         Date newDate = new Date(eventToRecur.getDate().date.plusYears(1).toString());
         Event nextEventToRecur =
-                new Event(eventToRecur.getName(), newDate
-                        , eventToRecur.getStartTime(), eventToRecur.getEndTime());
+                new Event(eventToRecur.getName(), newDate,
+                        eventToRecur.getStartTime(), eventToRecur.getEndTime());
 
         for (int i = 0; i < yearsDiff; i++) {
             model.addEvent(nextEventToRecur);
             newDate = new Date(nextEventToRecur.getDate().date.plusYears(1).toString());
             nextEventToRecur =
-                    new Event(eventToRecur.getName(), newDate
-                            , eventToRecur.getStartTime(), eventToRecur.getEndTime());
+                    new Event(eventToRecur.getName(), newDate,
+                            eventToRecur.getStartTime(), eventToRecur.getEndTime());
         }
     }
 

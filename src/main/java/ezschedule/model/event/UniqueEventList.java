@@ -43,11 +43,9 @@ public class UniqueEventList implements Iterable<Event> {
      */
     public void add(Event toAdd) {
         requireNonNull(toAdd);
-        /*
         if (contains(toAdd)) {
             throw new DuplicateEventException();
         }
-        */
         internalList.add(toAdd);
     }
 
@@ -64,11 +62,9 @@ public class UniqueEventList implements Iterable<Event> {
             throw new EventNotFoundException();
         }
 
-        /* to fix ltr
         if (!target.isSameEvent(editedEvent) && contains(editedEvent)) {
             throw new DuplicateEventException();
         }
-        */
 
         internalList.set(index, editedEvent);
     }
@@ -95,12 +91,9 @@ public class UniqueEventList implements Iterable<Event> {
      */
     public void setEvents(List<Event> events) {
         CollectionUtil.requireAllNonNull(events);
-        /* to fix ltr
         if (!eventsAreUnique(events)) {
             throw new DuplicateEventException();
         }
-        */
-
         internalList.setAll(events);
     }
 

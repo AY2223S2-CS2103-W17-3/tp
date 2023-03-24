@@ -40,10 +40,10 @@ public class UniqueEventListTest {
     }
 
     @Test
-    public void contains_eventWithSameIdentityFieldsInList_returnsTrue() {
+    public void contains_eventWithSameNameDifferentTimeInList_returnsFalse() {
         uniqueEventList.add(EVENT_A);
         Event editedA = new EventBuilder(EVENT_A).withDate(VALID_DATE_B).build();
-        assertTrue(uniqueEventList.contains(editedA));
+        assertFalse(uniqueEventList.contains(editedA));
     }
 
     @Test

@@ -24,10 +24,10 @@ public class EventTest {
         // null -> returns false
         assertFalse(EVENT_A.isSameEvent(null));
 
-        // same name, all other attributes different -> returns true
+        // same name, all other attributes different -> returns false
         Event editedA = new EventBuilder(EVENT_A).withDate(VALID_DATE_B)
                 .withStartTime(VALID_START_TIME_B).withEndTime(VALID_END_TIME_B).build();
-        Assertions.assertTrue(EVENT_A.isSameEvent(editedA));
+        Assertions.assertFalse(EVENT_A.isSameEvent(editedA));
 
         // different name, all other attributes same -> returns false
         editedA = new EventBuilder(EVENT_A).withName(VALID_NAME_B).build();

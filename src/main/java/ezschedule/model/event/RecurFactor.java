@@ -29,6 +29,11 @@ public class RecurFactor {
         this.factor = factor;
     }
 
+    /**
+     * Checks if RecurFactor matches strictly {DAY, MONTH, YEAR}.
+     * @param test
+     * @return
+     */
     public static boolean isValidRecurFactor(String test) {
         return (test.matches(VALIDATION_REGEX_DAY)
                 | test.matches(VALIDATION_REGEX_MONTH)

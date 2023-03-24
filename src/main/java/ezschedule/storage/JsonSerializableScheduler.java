@@ -49,11 +49,11 @@ class JsonSerializableScheduler {
         Scheduler scheduler = new Scheduler();
         for (JsonAdaptedEvent jsonAdaptedEvent : events) {
             Event event = jsonAdaptedEvent.toModelType();
-            /* to fix ltr
+
             if (scheduler.hasEvent(event)) {
                 throw new IllegalValueException(MESSAGE_DUPLICATE_EVENT);
             }
-            */
+
             scheduler.addEvent(event);
         }
         return scheduler;

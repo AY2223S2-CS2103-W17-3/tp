@@ -50,7 +50,10 @@ public class Event implements Comparable<Event> {
         }
 
         return otherEvent != null
-            && otherEvent.getName().equals(getName());
+            && otherEvent.getName().equals(getName())
+            && otherEvent.getDate().equals(getDate())
+            && otherEvent.getStartTime().equals(getStartTime())
+            && otherEvent.getEndTime().equals(getEndTime());
     }
 
     @Override
