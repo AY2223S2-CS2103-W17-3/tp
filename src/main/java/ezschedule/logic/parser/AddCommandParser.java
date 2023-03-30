@@ -15,6 +15,8 @@ import ezschedule.model.event.Time;
  */
 public class AddCommandParser implements Parser<AddCommand> {
 
+    public static final String MESSAGE_WRONG_TIME_ORDER = "Start time should come before end time!";
+
     /**
      * Returns true if none of the prefixes contains empty {@code Optional} values
      * in the given {@code ArgumentMultimap}.
@@ -44,6 +46,11 @@ public class AddCommandParser implements Parser<AddCommand> {
         Date date = ParserUtil.parseDate(argMultimap.getValue(CliSyntax.PREFIX_DATE).get());
         Time startTime = ParserUtil.parseTime(argMultimap.getValue(CliSyntax.PREFIX_START).get());
         Time endTime = ParserUtil.parseTime(argMultimap.getValue(CliSyntax.PREFIX_END).get());
+
+        if (startTime.isAfter(endTime)) {
+            throw new ParseException(String.format(
+                    AddCommandParser.MESSAGE_WRONG_TIME_ORDER, AddCommand.MESSAGE_USAGE));
+        }
 
         Event event = new Event(name, date, startTime, endTime);
 
