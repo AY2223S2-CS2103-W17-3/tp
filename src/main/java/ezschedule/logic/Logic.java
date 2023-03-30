@@ -9,6 +9,7 @@ import ezschedule.logic.commands.exceptions.CommandException;
 import ezschedule.logic.parser.exceptions.ParseException;
 import ezschedule.model.Model;
 import ezschedule.model.ReadOnlyScheduler;
+import ezschedule.model.event.Date;
 import ezschedule.model.event.Event;
 import javafx.collections.ObservableList;
 
@@ -52,6 +53,11 @@ public interface Logic {
      * Returns an unmodifiable view of the find command list of events
      */
     ObservableList<Event> getFindEventList();
+
+    /**
+     * Returns the global date
+     */
+    ObservableList<Date> getObservedDate();
 
     /**
      * Updates the filtered list of events

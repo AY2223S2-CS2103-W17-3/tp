@@ -19,6 +19,7 @@ import ezschedule.model.Model;
 import ezschedule.model.ReadOnlyScheduler;
 import ezschedule.model.ReadOnlyUserPrefs;
 import ezschedule.model.Scheduler;
+import ezschedule.model.event.Date;
 import ezschedule.model.event.Event;
 import ezschedule.testutil.EventBuilder;
 import javafx.collections.ObservableList;
@@ -175,6 +176,16 @@ public class AddCommandTest {
 
         @Override
         public void updateFindEventList(Predicate<Event> predicate) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void updateObservedDate(Date dateToSet) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public ObservableList<Date> getObservedDate() {
             throw new AssertionError("This method should not be called.");
         }
     }

@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 import ezschedule.commons.core.GuiSettings;
 import ezschedule.commons.core.LogsCenter;
+import ezschedule.model.event.Date;
 import ezschedule.model.event.Event;
 import ezschedule.model.event.UpcomingEventPredicate;
 import javafx.collections.ObservableList;
@@ -27,6 +28,7 @@ public class ModelManager implements Model {
     private final FilteredList<Event> filteredEvents;
     private final FilteredList<Event> upcomingEvents;
     private final FilteredList<Event> findEvents;
+    private final FilteredList<Date> observedDate;
 
     /**
      * Initializes a ModelManager with the given scheduler and userPrefs.
@@ -41,6 +43,7 @@ public class ModelManager implements Model {
         filteredEvents = new FilteredList<>(this.scheduler.getEventList());
         upcomingEvents = new FilteredList<>(this.scheduler.getEventList());
         findEvents = new FilteredList<>(this.scheduler.getEventList());
+        observedDate = new FilteredList<>(this.scheduler.getObservedDate());
         updateUpcomingEventList(new UpcomingEventPredicate(SHOW_UPCOMING_COUNT_ONE));
         updateFindEventList(PREDICATE_SHOW_NO_EVENTS);
     }
@@ -129,6 +132,17 @@ public class ModelManager implements Model {
         scheduler.setEvent(target, editedEvent);
         updateUpcomingEventList(new UpcomingEventPredicate());
         updateFindEventList(PREDICATE_SHOW_NO_EVENTS);
+    }
+
+    @Override
+    public void updateObservedDate(Date dateToSet) {
+        observedDate.clear();
+        observedDate.add(dateToSet);
+    }
+
+    @Override
+    public ObservableList<Date> getObservedDate() {
+        return scheduler.getObservedDate();
     }
 
     //=========== Event List Accessors =============================================================

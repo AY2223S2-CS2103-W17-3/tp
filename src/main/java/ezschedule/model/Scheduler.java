@@ -2,10 +2,13 @@ package ezschedule.model;
 
 import static java.util.Objects.requireNonNull;
 
+import java.time.LocalDate;
 import java.util.List;
 
+import ezschedule.model.event.Date;
 import ezschedule.model.event.Event;
 import ezschedule.model.event.UniqueEventList;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
@@ -15,6 +18,7 @@ import javafx.collections.ObservableList;
 public class Scheduler implements ReadOnlyScheduler {
 
     private final UniqueEventList events;
+    private final ObservableList<Date> observedDates = FXCollections.observableArrayList();
 
     /*
      * The 'unusual' code block below is a non-static initialization block, sometimes used to avoid duplication
@@ -25,6 +29,9 @@ public class Scheduler implements ReadOnlyScheduler {
      */
     {
         events = new UniqueEventList();
+        String now = LocalDate.now().toString();
+        Date nowDate = new Date(now);
+        observedDates.add(nowDate);
     }
 
     /**
@@ -111,6 +118,15 @@ public class Scheduler implements ReadOnlyScheduler {
      */
     public void removeEvent(Event key) {
         events.remove(key);
+    }
+
+    public void setObservedDate(Date dateToSet) {
+        observedDates.clear();
+        observedDates.add(dateToSet);
+    }
+
+    public ObservableList<Date> getObservedDate() {
+        return observedDates;
     }
 
     //// util methods

@@ -48,6 +48,7 @@ public class FindCommand extends Command {
                     new EventMatchesKeywordsAndDatePredicate(Arrays.asList(nameKeywords), date);
             model.updateFilteredEventList(predicate);
             model.updateFindEventList(predicate);
+            model.updateObservedDate(date);
 
         } else if (findEventDescriptor.getName().isPresent()) {
             String[] nameKeywords = findEventDescriptor.getName().get().toString().split("\\s+");
@@ -60,6 +61,7 @@ public class FindCommand extends Command {
             EventMatchesDatePredicate predicate = new EventMatchesDatePredicate(date);
             model.updateFilteredEventList(predicate);
             model.updateFindEventList(predicate);
+            model.updateObservedDate(date);
         }
 
         return new CommandResult(

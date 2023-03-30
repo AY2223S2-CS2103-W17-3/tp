@@ -4,6 +4,7 @@ import java.nio.file.Path;
 import java.util.function.Predicate;
 
 import ezschedule.commons.core.GuiSettings;
+import ezschedule.model.event.Date;
 import ezschedule.model.event.Event;
 import javafx.collections.ObservableList;
 
@@ -91,6 +92,11 @@ public interface Model {
     void setEvent(Event target, Event editedEvent);
 
     /**
+     * sets the given observed date {@code target} with {@code date}.
+     */
+    void updateObservedDate(Date dateToSet);
+
+    /**
      * Returns an unmodifiable view of the event list
      */
     ObservableList<Event> getEventList();
@@ -100,6 +106,11 @@ public interface Model {
      * Returns an unmodifiable view of the filtered event list
      */
     ObservableList<Event> getFilteredEventList();
+
+    /**
+     * Returns the observed date
+     */
+    ObservableList<Date> getObservedDate();
 
     /**
      * Returns an unmodifiable view of the upcoming event list

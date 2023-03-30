@@ -14,6 +14,7 @@ import ezschedule.logic.parser.SchedulerParser;
 import ezschedule.logic.parser.exceptions.ParseException;
 import ezschedule.model.Model;
 import ezschedule.model.ReadOnlyScheduler;
+import ezschedule.model.event.Date;
 import ezschedule.model.event.Event;
 import ezschedule.storage.Storage;
 import javafx.collections.ObservableList;
@@ -68,6 +69,11 @@ public class LogicManager implements Logic {
     @Override
     public ObservableList<Event> getFilteredEventList() {
         return model.getFilteredEventList();
+    }
+
+    @Override
+    public ObservableList<Date> getObservedDate() {
+        return model.getObservedDate();
     }
 
     @Override

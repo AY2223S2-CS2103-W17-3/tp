@@ -128,7 +128,7 @@ public class MainWindow extends UiPart<Stage> {
         showNextPlaceholder.getChildren().add(showNextPanel.getRoot());
 
         Calendar calendar = new Calendar(logic.getEventList(),
-                logic.getFindEventList(), logic::updateFilteredEventList);
+                logic.getFindEventList(), logic.getObservedDate(), logic::updateFilteredEventList);
         calendarPlaceholder.getChildren().add(calendar.getRoot());
     }
 
