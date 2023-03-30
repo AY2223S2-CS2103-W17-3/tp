@@ -7,7 +7,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
+import ezschedule.model.event.Date;
 import ezschedule.model.event.Event;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -24,6 +27,7 @@ public class Calendar extends UiPart<Region> {
 
     private final ObservableList<Event> eventList;
     private final ObservableList<Event> findEventList;
+    private final ObservableValue<Date> globalDate;
     private final FilterExecutor filterExecutor;
     private final ZonedDateTime today;
     private ZonedDateTime date;
@@ -40,16 +44,18 @@ public class Calendar extends UiPart<Region> {
      * Creates a {@code Calender} with the given {@code ObservableList}{@code CommandExecutor}}.
      */
     public Calendar(ObservableList<Event> eventList, ObservableList<Event> findEventList,
-                    FilterExecutor filterExecutor) {
+                    ObservableValue<Date> globalDate, FilterExecutor filterExecutor) {
         super(FXML);
         this.eventList = eventList;
         this.findEventList = findEventList;
+        this.globalDate = globalDate;
         this.filterExecutor = filterExecutor;
         date = ZonedDateTime.now();
         today = ZonedDateTime.now();
         monthMaxDate = date.getMonth().maxLength();
         eventList.addListener((ListChangeListener<Event>) c -> refreshCalendar());
         findEventList.addListener((ListChangeListener<Event>) c -> refreshCalendar());
+        globalDate.addListener((observableValue, oldValue, newValue) -> updateCalendar(newValue));
         drawCalendar();
     }
 
@@ -75,6 +81,11 @@ public class Calendar extends UiPart<Region> {
         monthMaxDate = date.getMonth().maxLength();
         calendar.getChildren().clear();
         drawCalendar();
+    }
+
+    private void updateCalendar(Date dateToUpdate) {
+        date.withMonth(dateToUpdate.getMonth());
+        date.withYear(dateToUpdate.getYear());
     }
 
     private void refreshCalendar() {
